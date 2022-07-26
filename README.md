@@ -1,24 +1,68 @@
-# README
+## プロジェクトのセットアップ手順
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Dockerイメージの構築
 
-Things you may want to cover:
+```bash
+docker-compose build
+```
 
-* Ruby version
+### Dockerコンテナの構築&起動
 
-* System dependencies
+#### 通常の起動
 
-* Configuration
+```bash
+docker-compose up
+```
 
-* Database creation
+#### バックグラウンドで起動
+```bash
+docker-compose up -d
+```
 
-* Database initialization
+### Dockerコンテナを終了する
 
-* How to run the test suite
+```bash
+docker-compose down
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### データベースの作成
 
-* Deployment instructions
+```bash
+docker-compose run web rails db:create
+```
 
-* ...
+### jsファイル&sassファイルのビルド&変更反映用
+
+```bash
+docker-compose run web bin/dev
+```
+
+## Dockerを使う上での注意点
+
+### Gemfileを編集したらDockerイメージに変更を反映させる
+
+#### bundle installする
+
+```bash
+docker-compose run web bundle install
+```
+
+#### GemfileとGemfile.lockを反映する
+
+```bash
+docker-compose build --force-rm
+```
+
+### デバッグツールを使うときは
+
+#### railsサーバーを立ち上げているコンテナのIDを確認する
+
+```bash
+docker container ls
+```
+
+#### 該当のコンテナIDをattachする
+
+```bash
+docker attach コンテナID
+```
