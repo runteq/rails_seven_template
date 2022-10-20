@@ -1,5 +1,22 @@
 ## プロジェクトのセットアップ手順
 
+### railsサーバーの起動
+
+```
+docker-compose build
+docker-compose run bundle install
+docker-compose run yarn install
+docker-compose up
+```
+
+### CSS, JS用のサーバー起動(ターミナルを複数開いて別タブで入力してください)
+
+```
+docker-compose run web bin/dev
+```
+
+## 各コマンドについて
+
 ### Dockerイメージの構築
 
 ```bash
