@@ -4,8 +4,8 @@
 
 ```
 docker-compose build
-docker-compose run bundle install
-docker-compose run yarn install
+docker-compose run web bundle install
+docker-compose run web yarn install
 docker-compose up
 ```
 
