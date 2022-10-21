@@ -4,15 +4,15 @@
 
 ```
 docker-compose build
-docker-compose run web bundle install
-docker-compose run web yarn install
+docker-compose run --rm web bundle install
+docker-compose run web --rm yarn install
 docker-compose up
 ```
 
 ### CSS, JS用のサーバー起動(ターミナルを複数開いて別タブで入力してください)
 
 ```
-docker-compose run web bin/dev
+docker-compose run --rm web bin/dev
 ```
 
 ## 各コマンドについて
@@ -45,13 +45,13 @@ docker-compose down
 ### データベースの作成
 
 ```bash
-docker-compose run web rails db:create
+docker-compose run --rm web rails db:create
 ```
 
 ### jsファイル&sassファイルのビルド&変更反映用
 
 ```bash
-docker-compose run web bin/dev
+docker-compose run --rm web bin/dev
 ```
 
 ## Dockerを使う上での注意点
@@ -61,7 +61,7 @@ docker-compose run web bin/dev
 #### bundle installする
 
 ```bash
-docker-compose run web bundle install
+docker-compose run --rm web bundle install
 ```
 
 #### GemfileとGemfile.lockを反映する
