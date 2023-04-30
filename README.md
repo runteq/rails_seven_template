@@ -24,7 +24,7 @@ docker compose exec web bash
 bin/rails db:create
 ```
 
-### CSS, JS用のサーバー起動(コンテナ内で実行してください)
+### CSS, JS用のサーバー起動(コンテナ内で実行してください・ターミナルで複数のタブを開くとやりやすいでしょう)
 
 ```
 bin/dev
