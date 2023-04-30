@@ -18,6 +18,18 @@ docker compose up -d
 docker compose exec web bash
 ```
 
+### Gemのインストール
+
+```bash
+bundle install
+```
+
+### node_modulesのインストール
+
+```bash
+yarn install
+```
+
 ### データベースの作成(コンテナ内で実行してください)
 
 ```bash
