@@ -9,7 +9,7 @@ docker compose build
 ### railsサーバーの起動(バックグラウンドでのコンテナの立ち上げとrailsサーバーの起動)
 
 ```
-docker compose up -d
+docker compose up
 ```
 
 ### コンテナ内に入る(rails・bundler・yarn関係のコマンドはコンテナ内で実行します)
